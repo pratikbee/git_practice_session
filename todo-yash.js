@@ -19,6 +19,7 @@ function debounce(fn, delay) {
     };
   }
   
+  // deep copy
  
   function deepCopy(obj, hash = new WeakMap()) {
     if (Object(obj) !== obj || obj instanceof Function) return obj;
