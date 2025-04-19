@@ -1,4 +1,3 @@
-// Debounce Function
 function debounce(func, delay) {
   let timer;
   return function (...args) {
@@ -7,7 +6,6 @@ function debounce(func, delay) {
   };
 }
 
-// Throttle Function
 function throttle(func, limit) {
   let lastFunc;
   let lastRan;
@@ -19,7 +17,7 @@ function throttle(func, limit) {
     } else {
       clearTimeout(lastFunc);
       lastFunc = setTimeout(function () {
-        if ((Date.now() - lastRan) >= limit) {
+        if (Date.now() - lastRan >= limit) {
           func.apply(context, args);
           lastRan = Date.now();
         }
@@ -28,7 +26,6 @@ function throttle(func, limit) {
   };
 }
 
-// Deep Copy Function (Without JSON)
 function deepCopy(obj, hash = new WeakMap()) {
   if (Object(obj) !== obj || obj instanceof Function) return obj;
   if (hash.has(obj)) return hash.get(obj);
@@ -41,4 +38,3 @@ function deepCopy(obj, hash = new WeakMap()) {
   }
   return result;
 }
-
